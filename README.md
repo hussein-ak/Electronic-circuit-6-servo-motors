@@ -20,6 +20,45 @@ Additional setup:
 • Ammeter in series with Servo3 for current measurement
 
 These instruments allow monitoring of Servo3's electrical parameters.
+### step5: Programming the Arduino
+Code:
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+Servo servo5;
+Servo servo6;
+
+void setup() {
+  servo1.attach(3);
+  servo2.attach(5);
+  servo3.attach(6);
+  servo4.attach(9);
+  servo5.attach(10);
+  servo6.attach(11);
+}
+
+void loop() {
+  //move each servo to 0 degrees,
+  servo1.write(0);
+  servo2.write(0);
+  servo3.write(0);
+  servo4.write(0);
+  servo5.write(0);
+  servo6.write(0);
+  delay(1000);
+	//  move to 180 degrees
+  servo1.write(180);
+  servo2.write(180);
+  servo3.write(180);
+  //  move to 90 degrees
+  servo4.write(90);
+  servo5.write(90);
+  servo6.write(90);
+  delay(1000);
+}
 
 ## Circuit illustration
 ### when its off
